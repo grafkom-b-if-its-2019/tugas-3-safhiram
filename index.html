@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Belajar WebGL</title>
 </head>
 <body>
-  <canvas id="glcanvas" width="500" height="500">
-    Browser Anda tidak mendukung HTML5 <code>&lt;canvas&gt;</code>.
-  </canvas>
+  <br>
+    <div id="hehe">
+        <p>Tekan Tombol X untuk membuat kubus berputar terhadap sumbu X</p>
+        <p>Tekan Tombol Y untuk membuat kubus berputar terhadap sumbu Y</p>
+        <p>Tekan Tombol Z untuk membuat kubus berputar terhadap sumbu Z</p>
+    </div>
+    <br>
+    <br>
+  <div >
+      <div>
+          <canvas id="glcanvas" width="500" height="500">
+              Browser Anda tidak mendukung HTML5 <code>&lt;canvas&gt;</code>.
+            </canvas>
+      </div>  
+  </div>
+  
 
   <!-- Shaders -->
   <script name="shader" data-src="vertex.glsl" data-type="vertex" data-version="v1"></script>

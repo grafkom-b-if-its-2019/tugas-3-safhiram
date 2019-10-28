@@ -6,7 +6,7 @@
   var translate = [0.0, 0.0, 0.0];
 
   var scale = 0;
-  var tambah = 0.0027;
+  var tambah = 0.0100;
 
   var tambahX = 0.01;
   var tambahY = 0.01;
@@ -136,14 +136,14 @@
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cubeVertices), gl.STATIC_DRAW);
 
     // Definisi view dan projection
-    var vmLoc = gl.getUniformLocation(program, 'view');
-    var pmLoc = gl.getUniformLocation(program, 'projection');
+    var viewLoc = gl.getUniformLocation(program, 'view');
+    var projectionLoc = gl.getUniformLocation(program, 'projection');
 
-    var vm = glMatrix.mat4.create();
-    var pm = glMatrix.mat4.create();
-    // console.log(pm);
+    var view = glMatrix.mat4.create();
+    var projection = glMatrix.mat4.create();
+    // console.log(projection);
 
-    glMatrix.mat4.lookAt(vm,
+    glMatrix.mat4.lookAt(view,
       glMatrix.vec3.fromValues(0.0, 0.0, -0.5),    // posisi kamera
       glMatrix.vec3.fromValues(0.0, 0.0, -2.0),  // titik yang dilihat; pusat kubus akan kita pindah ke z=-2
       glMatrix.vec3.fromValues(0.0, 1.0, 0.0)   // arah atas dari kamera
@@ -153,25 +153,20 @@
     var aspect = canvas.width / canvas.height;
     var near = 0.5;
     var far = 10.0;
-    glMatrix.mat4.perspective(pm,
+    glMatrix.mat4.perspective(projection,
       fovy,
       aspect,
       near,
       far
     );
 
-    gl.uniformMatrix4fv(vmLoc, false, vm);
-    gl.uniformMatrix4fv(pmLoc, false, pm);
+    gl.uniformMatrix4fv(viewLoc, false, view);
+    gl.uniformMatrix4fv(projectionLoc, false, projection);
 
     var vPosition = gl.getAttribLocation(program, 'vPosition');
     var vColor = gl.getAttribLocation(program, 'vColor');
 
     function onKeyPress(event) {
-      if (event.keyCode == 83 || event.keyCode == 115) {
-        rotasiTambah = 0.0;
-      } else if (event.keyCode == 80 || event.keyCode == 112) {
-        rotasiTambah = 0.5;
-      }
 
       if (event.keyCode == 88 || event.keyCode == 120) {
         axis = xAxis;
@@ -233,13 +228,13 @@
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(triangleVertices), gl.STATIC_DRAW);
 
-    var vmLoc = gl.getUniformLocation(program, 'view');
-    var pmLoc = gl.getUniformLocation(program, 'projection');
+    var viewLoc = gl.getUniformLocation(program, 'view');
+    var projectionLoc = gl.getUniformLocation(program, 'projection');
 
-    var vm = glMatrix.mat4.create();
-    var pm = glMatrix.mat4.create();
+    var view = glMatrix.mat4.create();
+    var projection = glMatrix.mat4.create();
 
-    glMatrix.mat4.lookAt(vm,
+    glMatrix.mat4.lookAt(view,
       glMatrix.vec3.fromValues(0.0, 0.0, -0.5),    // posisi kamera
       glMatrix.vec3.fromValues(0.0, 0.0, -2.0),  // titik yang dilihat; pusat kubus akan kita pindah ke z=-2
       glMatrix.vec3.fromValues(0.0, 1.0, 0.0)   // arah atas dari kamera
@@ -249,25 +244,20 @@
     var aspect = canvas.width / canvas.height;
     var near = 0.5;
     var far = 10.0;
-    glMatrix.mat4.perspective(pm,
+    glMatrix.mat4.perspective(projection,
       fovy,
       aspect,
       near,
       far
     );
 
-    gl.uniformMatrix4fv(vmLoc, false, vm);
-    gl.uniformMatrix4fv(pmLoc, false, pm);
+    gl.uniformMatrix4fv(viewLoc, false, view);
+    gl.uniformMatrix4fv(projectionLoc, false, projection);
 
     var vPosition = gl.getAttribLocation(program, 'vPosition');
     var vColor = gl.getAttribLocation(program, 'vColor');
 
     function onKeyPress(event) {
-      if (event.keyCode == 83 || event.keyCode == 115) {
-        rotasiTambah = 0.0;
-      } else if (event.keyCode == 80 || event.keyCode == 112) {
-        rotasiTambah = 0.5;
-      }
 
       if (event.keyCode == 88 || event.keyCode == 120) {
         axis = xAxis;
@@ -318,7 +308,7 @@
   function perpindahan(program,translate){
 
         //translasi terhadap x
-        if (translate[0] + 0.5 > 0.5*5 || translate[0] + 0.2 < -0.5*5 ) {
+        if (translate[0] + 0.55 > 0.5*5 || translate[0] + 0.55 < -0.5*5 ) {
           tambahX *= -1;
         }
         translate[0] += tambahX;
