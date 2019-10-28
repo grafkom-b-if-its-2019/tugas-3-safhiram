@@ -4,12 +4,22 @@ attribute vec3 vPosition;
 attribute vec3 vColor;
 varying vec3 fColor;
 uniform vec3 theta;
+uniform mat4 projection;
+uniform mat4 view;
+
 
 void main() {
   fColor = vColor;
   vec3 angle = radians(theta);
   vec3 c = cos(angle);
   vec3 s = sin(angle);
+
+   mat4 translate = mat4(
+    1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0,
+    0.0, 0.0, 1.0, 0.0,
+    0.0, 0.0, -2.0, 1.0         
+  );
   
   mat4 rx = mat4(
     1.0, 0.0, 0.0, 0.0,
@@ -32,5 +42,5 @@ void main() {
     0.0, 0.0, 0.0, 1.0
   );
   gl_Position = rx * ry * rz * vec4(vPosition, 1.0);
-
+  gl_Position = projection*view* translate * gl_Position;
 }

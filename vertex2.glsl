@@ -7,6 +7,9 @@ uniform vec3 theta;
 uniform float scale;
 uniform vec3 translate;
 uniform float pseudo;
+uniform mat4 projection;
+uniform mat4 view;
+
 
 void main() {
   fColor = vColor;
@@ -15,6 +18,13 @@ void main() {
   vec3 angle = radians(theta);
   vec3 c = cos(angle);
   vec3 s = sin(angle);
+
+   mat4 perspektif = mat4(
+    1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0,
+    0.0, 0.0, 1.0, 0.0,
+    0.0, 0.0, -2.0, 1.0         
+  );
 
   mat4 translasi = mat4(
       1, 0, 0, translate.x,
@@ -44,16 +54,10 @@ void main() {
     0.0, 0.0, 0.0, 1.0
   );
 
-  vec4 rotated_position =  rx * ry * rz * vec4(vPosition, 0.0, 1.0);
+  vec4 rotated_position =  vec4(vPosition, 0.0, 1.0);
   vec4 pseudo_x = vec4(pseudo, 0, 0, 1.0);
-  vec4 pseudo =   rx * ry * rz * pseudo_x;
+  vec4 pseudo =   pseudo_x;
 
-  mat4 Skalasi = mat4(
-      0.2       , 0             , 0, 0,
-      0           , 0.2             , 0, 0,
-      0           , 0             , 1, 0,
-      0           , 0             , 0, 1
-  );
 
   mat4 pseudo_rotate = mat4(
       scale       , 0             , 0, -(pseudo.x)*scale+pseudo.x,
@@ -61,5 +65,14 @@ void main() {
       0           , 0             , 1, 0,
       0           , 0             , 0, 1
   );
-  gl_Position = rotated_position * translasi * pseudo_rotate * Skalasi;
+
+    mat4 skalasi = mat4(
+      0.2       , 0             , 0, 0,
+      0           , 0.2             , 0, 0,
+      0           , 0             , 1, 0,
+      0           , 0             , 0, 1
+  );
+  
+  gl_Position = rotated_position * translasi * pseudo_rotate * skalasi;
+  gl_Position = projection * view * perspektif * gl_Position;
 }
