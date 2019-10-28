@@ -62,41 +62,41 @@
 
     var cubeVertices = [
       // x, y, z      r, g, b
-      -0.5, 0.5,  0.5,   1.0, 0.0, 0.0, //BAD BDC MERAH DEPAN //keempat ganti sama kedua
-      -0.5, -0.5, 0.5,   1.0, 0.0, 0.0,
-      0.5, -0.5,  0.5,   1.0, 0.0, 0.0,
-      -0.5, -0.5, 0.5,   1.0, 0.0, 0.0,
-      0.5, -0.5,  0.5,   1.0, 0.0, 0.0,// Pertama dan terakhir ditambah diakhir
-      0.5,  0.5,  0.5,   1.0, 0.0, 0.0,
-      -0.5, 0.5,  0.5,   1.0, 0.0, 0.0,
-      0.5,  0.5,  0.5,   1.0, 0.0, 0.0,
+      -0.5, 0.5,  0.5,   1.0, 1.0, 1.0, //BAD BDC MERAH DEPAN //keempat ganti sama kedua
+      -0.5, -0.5, 0.5,   1.0, 1.0, 1.0,
+      0.5, -0.5,  0.5,   1.0, 1.0, 1.0,
+      -0.5, -0.5, 0.5,   1.0, 1.0, 1.0,
+      0.5, -0.5,  0.5,   1.0, 1.0, 1.0,// Pertama dan terakhir ditambah diakhir
+      0.5,  0.5,  0.5,   1.0, 1.0, 1.0,
+      -0.5, 0.5,  0.5,   1.0, 1.0, 1.0,
+      0.5,  0.5,  0.5,   1.0, 1.0, 1.0,
 
-      0.5,  0.5,  0.5,   0.0, 1.0, 0.0, //CDH CHG HIJAU KANAN
-      0.5, -0.5,  0.5,   0.0, 1.0, 0.0,
-      0.5, -0.5,  -0.5,   0.0, 1.0, 0.0,
-      0.5, -0.5,  0.5,   0.0, 1.0, 0.0,
-      0.5, -0.5,  -0.5,   0.0, 1.0, 0.0,
-      0.5,  0.5,  -0.5,   0.0, 1.0, 0.0,
-      0.5,  0.5,  0.5,   0.0, 1.0, 0.0,
-      0.5,  0.5,  -0.5,   0.0, 1.0, 0.0,
+      0.5,  0.5,  0.5,   1.0, 1.0, 1.0, //CDH CHG HIJAU KANAN
+      0.5, -0.5,  0.5,   1.0, 1.0, 1.0,
+      0.5, -0.5,  -0.5,   1.0, 1.0, 1.0,
+      0.5, -0.5,  0.5,   1.0, 1.0, 1.0,
+      0.5, -0.5,  -0.5,   1.0, 1.0, 1.0,
+      0.5,  0.5,  -0.5,   1.0, 1.0, 1.0,
+      0.5,  0.5,  0.5,   1.0, 1.0, 1.0,
+      0.5,  0.5,  -0.5,   1.0, 1.0, 1.0,
 
-      0.5, -0.5,  0.5,   0.0, 0.0, 1.0, //DAE DEH BIRU BAWAH
-      -0.5, -0.5, 0.5,   0.0, 0.0, 1.0,
-      -0.5, -0.5, -0.5,   0.0, 0.0, 1.0,
-      -0.5, -0.5, 0.5,   0.0, 0.0, 1.0,
-      -0.5, -0.5, -0.5,   0.0, 0.0, 1.0,
-      0.5, -0.5,  -0.5,   0.0, 0.0, 1.0,
-      0.5, -0.5,  0.5,   0.0, 0.0, 1.0,
-      0.5, -0.5,  -0.5,   0.0, 0.0, 1.0,
+      0.5, -0.5,  0.5,   0.0, 1.0, 1.0, //DAE DEH BIRU BAWAH
+      -0.5, -0.5, 0.5,   0.0, 1.0, 1.0,
+      -0.5, -0.5, -0.5,   0.0, 1.0, 1.0,
+      -0.5, -0.5, 0.5,   0.0, 1.0, 1.0,
+      -0.5, -0.5, -0.5,   0.0, 1.0, 1.0,
+      0.5, -0.5,  -0.5,   0.0, 1.0, 1.0,
+      0.5, -0.5,  0.5,   0.0, 1.0, 1.0,
+      0.5, -0.5,  -0.5,   0.0, 1.0, 1.0,
 
-      -0.5, -0.5, -0.5,   1.0, 1.0, 0.0, //EFG EGH KUNING BELAKANG
-      -0.5, 0.5,  -0.5,   1.0, 1.0, 0.0,
-      0.5,  0.5,  -0.5,   1.0, 1.0, 0.0,
-      -0.5, 0.5,  -0.5,   1.0, 1.0, 0.0,
-      0.5,  0.5,  -0.5,   1.0, 1.0, 0.0,
-      0.5, -0.5,  -0.5,   1.0, 1.0, 0.0,
-      -0.5, -0.5, -0.5,   1.0, 1.0, 0.0,
-      0.5, -0.5,  -0.5,   1.0, 1.0, 0.0,
+      -0.5, -0.5, -0.5,   0.0, 1.0, 1.0, //EFG EGH KUNING BELAKANG
+      -0.5, 0.5,  -0.5,   0.0, 1.0, 1.0,
+      0.5,  0.5,  -0.5,   0.0, 1.0, 1.0,
+      -0.5, 0.5,  -0.5,   0.0, 1.0, 1.0,
+      0.5,  0.5,  -0.5,   0.0, 1.0, 1.0,
+      0.5, -0.5,  -0.5,   0.0, 1.0, 1.0,
+      -0.5, -0.5, -0.5,   0.0, 1.0, 1.0,
+      0.5, -0.5,  -0.5,   0.0, 1.0, 1.0,
 
       -0.5, 0.5,  -0.5,   0.0, 1.0, 1.0, //FEA FAB CYAN KIRI
       -0.5, -0.5, -0.5,   0.0, 1.0, 1.0,
@@ -107,14 +107,14 @@
       -0.5, 0.5,  -0.5,   0.0, 1.0, 1.0,
       -0.5, 0.5,  0.5,   0.0, 1.0, 1.0,
 
-       0.5,  0.5, -0.5,  1.0, 0.0, 1.0, //GFB GBC MAGENTA ATAS
-      -0.5, 0.5,  -0.5,  1.0, 0.0, 1.0,
-      -0.5, 0.5,  0.5,   1.0, 0.0, 1.0,
-      -0.5, 0.5,  -0.5,  1.0, 0.0, 1.0,
-      -0.5, 0.5,  0.5,   1.0, 0.0, 1.0,
-       0.5, 0.5,  0.5,   1.0, 0.0, 1.0,
-       0.5,  0.5, -0.5,  1.0, 0.0, 1.0,
-       0.5, 0.5,  0.5,   1.0, 0.0, 1.0,
+       0.5,  0.5, -0.5,  0.0, 1.0, 1.0, //GFB GBC MAGENTA ATAS
+      -0.5, 0.5,  -0.5,  0.0, 1.0, 1.0,
+      -0.5, 0.5,  0.5,   0.0, 1.0, 1.0,
+      -0.5, 0.5,  -0.5,  0.0, 1.0, 1.0,
+      -0.5, 0.5,  0.5,   0.0, 1.0, 1.0,
+       0.5, 0.5,  0.5,   0.0, 1.0, 1.0,
+       0.5,  0.5, -0.5,  0.0, 1.0, 1.0,
+       0.5, 0.5,  0.5,   0.0, 1.0, 1.0,
 
     ];
 
@@ -216,41 +216,47 @@
     5 * Float32Array.BYTES_PER_ELEMENT,
     2 * Float32Array.BYTES_PER_ELEMENT
     );
-        //translasi terhadap x
-        if (translate[0] + 0.5 > 0.5*5 || translate[0] + 0.2 < -0.5*5 ) {
-          tambahX *= -1;
-        }
-        translate[0] += tambahX;
 
-        var middleLoc = gl.getUniformLocation(program, 'pseudo');
-        middle_coordinates = 0.35 + translate[0];
-
-        gl.uniform1f(middleLoc, middle_coordinates);
-
-        //translasi terhadap y
-        if (translate[1] + 0.5 > 0.5*5 || translate[1] + -0.5 < -0.5*5 ) {
-          tambahY *= -1;
-        }
-        translate[1] += tambahY;
-
-        //translasi terhadap z
-        if (translate[2] > 0.5*0.5 || translate[2] < -0.5*0.5 ) {
-          tambahZ *= -1;
-        }
-        translate[2] += tambahZ;
-
-        var translationLoc = gl.getUniformLocation(program, 'translate');
-
-        gl.uniform3fv(translationLoc, translate);
-
-        var thetaLoc = gl.getUniformLocation(program, 'theta');
-        var theta = [-20.0, 40.0, 0.0];
-
-        gl.uniform3fv(thetaLoc, theta);
+    perpindahan(translate,program);
 
     gl.enableVertexAttribArray(vPosition);
     gl.enableVertexAttribArray(vColor);
     return n;
+  }
+
+  function perpindahan(translate,program)
+  {
+    //translasi terhadap x
+    if (translate[0] + 0.5 > 0.5*5 || translate[0] + 0.2 < -0.5*5 ) {
+      tambahX *= -1;
+    }
+    translate[0] += tambahX;
+
+    var pseudoLoc = gl.getUniformLocation(program, 'pseudo');
+    pseudo_coordinates = 0.35 + translate[0];
+
+    gl.uniform1f(pseudoLoc, pseudo_coordinates);
+
+    //translasi terhadap y
+    if (translate[1] + 0.5 > 0.5*5 || translate[1] + -0.5 < -0.5*5 ) {
+      tambahY *= -1;
+    }
+    translate[1] += tambahY;
+
+    //translasi terhadap z
+    if (translate[2] > 0.5*0.5 || translate[2] < -0.5*0.5 ) {
+      tambahZ *= -1;
+    }
+    translate[2] += tambahZ;
+
+    var translationLoc = gl.getUniformLocation(program, 'translate');
+
+    gl.uniform3fv(translationLoc, translate);
+
+    var thetaLoc = gl.getUniformLocation(program, 'theta');
+    var theta = [-20.0, 40.0, 0.0];
+
+    gl.uniform3fv(thetaLoc, theta);
   }
 
   function resizer(){
